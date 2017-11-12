@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html ng-app>
+
 <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT"
+        crossorigin="anonymous">
     <title> Welcome to AngularJS </title>
 </head>
+
 <body>
     <!-- NAV COMPONENT -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -13,22 +16,45 @@
             </form>
         </div>
     </nav>
-<!-- NAV END -->
-
+    <!-- NAV END -->
 <div class="col-sm-12">
-    <h2>Hello {{name}} ! </h2>
-    <p> Two way Data binding ...</p>
+    <legend>
+        <h2>Hello {{name}} ! </h2>
+        <p> Two way Data binding ...</p>
+    </legend>
+    <legend>
+        <button class="btn btn-primary" ng-dblclick="Msg='Hello '+name">
+            Double Click
+        </button>
+        </br>
+        <h3>
+            {{Msg}}</h3>
+    </legend>
+    <legend>
+        <p>
+            <input type="checkbox" ng-model="Switch" /> Disable Submit Button
+        </p>
+        <p>
+            <button class="btn btn-success" ng-disabled="Switch">Submit</button>
+        </p>
+    </legend>
+    <legend>
+            First Name :   
+            <input type="text" ng-model="firstName">  
+                <br />   
+        Middle Name:   
+                <input type="text" ng-model="middleName">  
+                    <br />   
+        Last Name :   
+                    <input type="text" ng-model="lastName">  
+                        <br>   
+          
+        Full Name: {{firstName + " " + middleName + " " + lastName }}   
+    </legend>
+</div>
 
-    <button class="btn btn-primary" ng-dblclick="Msg='Hello '+name">  
-            Double Click  
-            </button>  
-                </br>  
-                <h3>  
-            {{Msg}}</h3>  
 
-    </div>
-
-    
     <script src="js/angular.min.js"></script>
 </body>
+
 </html>
